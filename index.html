@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Hour | Portfolio</title>
+  <link rel="icon" href="../my profile/index.jpg">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --secondary: #16213e;
+      --accent: #0f3460;
+      --highlight: #e94560;
+      --text: #eaeaea;
+      --text-muted: #a0a0a0;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ========== SIDEBAR ========== */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+      color: var(--white);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      object-fit: cover;
+      margin-bottom: 15px;
+      background: var(--white);
+    }
+
+    .profile-header h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .profile-header p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+    }
+
+    .nav-item.active {
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .nav-item i {
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    .main-content {
+      margin-left: 260px;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 60px 80px;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 560px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #e94560;
+    }
+
+    .hero-role {
+      color: #a0a0ff;
+      font-size: 1.15rem;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: #c0c0c0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: #e94560;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background: #d63850;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+    }
+
+    .hero-image {
+      flex-shrink: 0;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ========== ABOUT ========== */
+    .about-section {
+      background: var(--white);
+      color: #1a1a2e;
+      padding: 80px 60px;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #f8f9fa;
+      border-radius: 20px;
+      padding: 50px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+    }
+
+    .about-left {
+      flex: 1;
+    }
+
+    .about-left .label {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+
+    .about-left h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about-left h2 span {
+      color: #e94560;
+    }
+
+    .about-left p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      max-width: 480px;
+    }
+
+    .quick-facts {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      width: 320px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .quick-facts h3 {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      color: #1a1a2e;
+    }
+
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+
+    .fact-row:last-child {
+      border-bottom: none;
+    }
+
+    .fact-row .label {
+      color: #666;
+    }
+
+    .fact-row .value {
+      font-weight: 500;
+      color: #1a1a2e;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: rgb(8, 8, 8);
+      color: white;
+      padding: 50px 60px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      max-width: 280px;
+    }
+
+    .footer-links h4,
+    .footer-social h4 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-icons a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.15rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      background: #e94560;
+      transform: translateY(-3px);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 40px;
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-image img {
+        width: 260px;
+        height: 260px;
+      }
+
+      .about-container {
+        flex-direction: column;
+        padding: 40px 30px;
+      }
+
+      .quick-facts {
+        width: 100%;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+      }
+
+      .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .nav-item {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .about-section {
+        padding: 40px 20px;
+      }
+
+      footer {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile-header">
+      <img src="../my profile/index.jpg" alt="Sun Hour" class="avatar" id="sidebarAvatar">
+      <h2>Sun Hour</h2>
+      <p>Junior Developer</p>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#home" class="nav-item active">
+        <i class="fa fa-user"></i> Profile
+      </a>
+      <a href="#about" class="nav-item">
+        <i class="fa fa-info-circle"></i> About Me
+      </a>
+      <a href="https://t.me/benzersam" class="nav-item">
+        <i class="fa fa-envelope"></i> Contact Me
+      </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Hello, I'm <span>Sun Hour</span></h1>
+        <p class="hero-role">Junior Developer</p>
+        <p>
+        Learn to learn. IT moves fast. The skill that matters most isn't knowing every language — it's being comfortable picking up new ones quickly. Get good at reading documentation, debugging by yourself, and using resources like Stack Overflow or AI tools wisely (understand what they give you, don't just copy-paste).
+        </p>
+        <a href="#about" class="btn-primary-custom">
+          More About Me <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <!-- Replace with your real photo -->
+        <img src="../my profile/index1.jpg" alt="Sun Hour profile">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-left">
+          <div class="label">ABOUT ME</div>
+          <h2>Building things for the <span>Junior Developer in Me</span></h2>
+          <p>
+            Hello, my name is Sun Hour. I'm studying Management Information of Technology,
+            currently in my first year, and passionate about frontend and backend development.
+          </p>
+        </div>
+
+        <div class="quick-facts">
+          <h3>Quick Facts</h3>
+          <div class="fact-row">
+            <span class="label">Name</span>
+            <span class="value">Chhoeun Sun Hour</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">Role</span>
+            <span class="value">Junior Developer</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">Phone</span>
+            <span class="value">+855 68 268 246</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">Email</span>
+            <span class="value">Chhoeunhourhour@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Sun Hour</h3>
+          <p>Junior Developer studying Information Technology.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow Me</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/18EjMT5eED/?mibextid=wwXIfr" title="Facebook" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/benzersam?igsh=MXFqYW1rejgxZ3Nicg%3D%3D&utm_source=qr" title="Instagram" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@benzerhour?_r=1&_t=ZS-9AK6h1jACFZ" title="TikTok" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
