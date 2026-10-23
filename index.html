@@ -4,23 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sun Hour | Portfolio</title>
-  <link rel="icon" href="../image (1).jpg">
-
+  <link rel="icon" href="https://ui-avatars.com/api/?name=Sun+Hour&background=e85d4c&color=fff&rounded=true&size=64">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <style>
     :root {
-      --primary: #1a1a2e;
-      --secondary: #16213e;
-      --accent: #0f3460;
-      --highlight: #e94560;
-      --text: #eaeaea;
-      --text-muted: #a0a0a0;
+      --primary: #e85d4c;
+      --secondary: #1f1b3a;
+      --accent: #2d2a5a;
+      --text: #f0f0f5;
+      --text-muted: #a0a0b8;
       --white: #ffffff;
       --radius: 12px;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -34,7 +29,7 @@
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--primary);
+      background: var(--secondary);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -42,9 +37,9 @@
 
     /* ========== SIDEBAR ========== */
     .sidebar {
-      width: 260px;
-      background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(180deg, #1f1b3a, #2d2a5a);
       color: var(--white);
+      width: 280px;
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
@@ -63,8 +58,8 @@
     .avatar {
       width: 90px;
       height: 90px;
-      border-radius: 50%;
       border: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
       background: var(--white);
@@ -85,7 +80,6 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      flex: 1;
     }
 
     .nav-item {
@@ -96,7 +90,7 @@
       color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
       font-size: 0.95rem;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: all 0.25s ease;
     }
 
@@ -118,7 +112,7 @@
 
     /* ========== MAIN CONTENT ========== */
     .main-content {
-      margin-left: 260px;
+      margin-left: 280px;
       flex: 1;
       min-height: 100vh;
     }
@@ -130,8 +124,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 40px;
-      padding: 60px 80px;
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      padding: 60px;
+      background: linear-gradient(135deg, #1f1b3a 0%, #2d2a5a 50%, #3d2a5a 100%);
     }
 
     .hero-content {
@@ -140,24 +134,24 @@
     }
 
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3.3rem;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
 
     .hero h1 span {
-      color: #e94560;
+      color: #e85d4c;
     }
 
     .hero-role {
-      color: #a0a0ff;
+      color: #a0a0b8;
       font-size: 1.15rem;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .hero p {
-      color: #c0c0c0;
+      color: #c8c8d8;
       font-size: 1.05rem;
       line-height: 1.7;
       margin-bottom: 32px;
@@ -166,9 +160,9 @@
     .btn-primary-custom {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 12px 28px;
-      background: #e94560;
+      background: #e85d4c;
       color: white;
       border: none;
       border-radius: 50px;
@@ -178,10 +172,10 @@
     }
 
     .btn-primary-custom:hover {
-      background: #d63850;
+      background: #d14a3a;
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+      box-shadow: 0 8px 20px rgba(232, 93, 76, 0.4);
     }
 
     .hero-image {
@@ -194,6 +188,7 @@
       border-radius: 20px;
       object-fit: cover;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      background: #2d2a5a;
     }
 
     /* ========== ABOUT ========== */
@@ -206,7 +201,7 @@
     .about-container {
       max-width: 1100px;
       margin: 0 auto;
-      background: #f8f9fa;
+      background: #f8f9fe;
       border-radius: 20px;
       padding: 50px;
       display: flex;
@@ -216,11 +211,12 @@
     }
 
     .about-left {
-      flex: 1;
+      flex: 2;
     }
 
     .about-left .label {
       font-size: 0.85rem;
+      text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 600;
       opacity: 0.7;
@@ -234,7 +230,7 @@
     }
 
     .about-left h2 span {
-      color: #e94560;
+      color: #e85d4c;
     }
 
     .about-left p {
@@ -247,14 +243,14 @@
     .quick-facts {
       background: white;
       border-radius: 16px;
-      padding: 28px 32px;
+      padding: 30px;
       width: 320px;
       flex-shrink: 0;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
 
     .quick-facts h3 {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       margin-bottom: 20px;
       color: #1a1a2e;
     }
@@ -276,7 +272,7 @@
     }
 
     .fact-row .value {
-      font-weight: 500;
+      font-weight: 600;
       color: #1a1a2e;
     }
 
@@ -302,14 +298,14 @@
     }
 
     .footer-brand p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       opacity: 0.7;
       max-width: 280px;
     }
 
     .footer-links h4,
     .footer-social h4 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 16px;
     }
 
@@ -321,9 +317,9 @@
     .footer-links a {
       color: white;
       text-decoration: none;
+      opacity: 0.8;
       display: block;
       margin-bottom: 10px;
-      opacity: 0.8;
       transition: opacity 0.2s;
     }
 
@@ -340,8 +336,8 @@
     .social-icons a {
       width: 42px;
       height: 42px;
-      border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -352,7 +348,7 @@
     }
 
     .social-icons a:hover {
-      background: #e94560;
+      background: #e85d4c;
       transform: translateY(-3px);
     }
 
@@ -361,7 +357,7 @@
       .hero {
         flex-direction: column;
         text-align: center;
-        padding: 60px 40px;
+        padding: 80px 40px;
         gap: 40px;
       }
 
@@ -381,11 +377,6 @@
 
       .quick-facts {
         width: 100%;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        gap: 30px;
       }
     }
 
@@ -427,15 +418,24 @@
       footer {
         padding: 40px 20px;
       }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
-
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="profile-header">
-      <img src="../image (1).jpg" alt="" class="avatar" id="sidebarAvatar">
+      <!-- Replace with your real photo later -->
+      <img src="https://ui-avatars.com/api/?name=Sun+Hour&background=e85d4c&color=fff&size=180" 
+           alt="Sun Hour" class="avatar">
       <h2>Sun Hour</h2>
       <p>Junior Developer</p>
     </div>
@@ -447,7 +447,7 @@
       <a href="#about" class="nav-item">
         <i class="fa fa-info-circle"></i> About Me
       </a>
-      <a href="https://t.me/benzersam" class="nav-item">
+      <a href="https://t.me/yourusername" class="nav-item" target="_blank">
         <i class="fa fa-envelope"></i> Contact Me
       </a>
     </nav>
@@ -455,14 +455,17 @@
 
   <!-- MAIN CONTENT -->
   <div class="main-content">
-
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Hello, I'm <span>Sun Hour</span></h1>
         <p class="hero-role">Junior Developer</p>
         <p>
-        Learn to learn. IT moves fast. The skill that matters most isn't knowing every language — it's being comfortable picking up new ones quickly. Get good at reading documentation, debugging by yourself, and using resources like Stack Overflow or AI tools wisely (understand what they give you, don't just copy-paste).
+          Learn to learn. IT moves fast. The skill that matters most isn't knowing every
+          language — it's being comfortable picking up new ones quickly. Get good
+          at reading documentation, debugging by yourself, and using resources like
+          Stack Overflow or AI tools wisely (understand what they give you, don't just
+          copy-paste).
         </p>
         <a href="#about" class="btn-primary-custom">
           More About Me <i class="fa fa-chevron-right"></i>
@@ -470,8 +473,8 @@
       </div>
 
       <div class="hero-image">
-        <!-- Replace with your real photo -->
-        <img src="../photo_2026-10-06_13-54-49.jpg" alt="">
+        <!-- Replace with your real photo later -->
+        <img src="https://picsum.photos/id/1011/600/600" alt="Sun Hour">
       </div>
     </section>
 
@@ -479,11 +482,11 @@
     <section class="about-section" id="about">
       <div class="about-container">
         <div class="about-left">
-          <div class="label">ABOUT ME</div>
-          <h2>Building things for the <span>Junior Developer in Me</span></h2>
+          <div class="label">About Me</div>
+          <h2>Building things for the <span>Junior Developer</span> in Me</h2>
           <p>
-            Hello, my name is Sun Hour. I'm studying Management Information of Technology,
-            currently in my first year, and passionate about frontend and backend development.
+            Hello, my name is Sun Hour. I'm studying Management Information Technology.
+            Currently in my first year, and passionate about frontend and backend development.
           </p>
         </div>
 
@@ -491,7 +494,7 @@
           <h3>Quick Facts</h3>
           <div class="fact-row">
             <span class="label">Name</span>
-            <span class="value">Chhoeun Sun Hour</span>
+            <span class="value">Sun Hour</span>
           </div>
           <div class="fact-row">
             <span class="label">Role</span>
@@ -499,18 +502,18 @@
           </div>
           <div class="fact-row">
             <span class="label">Phone</span>
-            <span class="value">+855 68 268 246</span>
+            <span class="value">+855 98 268 246</span>
           </div>
           <div class="fact-row">
             <span class="label">Email</span>
-            <span class="value">Chhoeunhourhour@gmail.com</span>
+            <span class="value">khourhour09@gmail.com</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact">
+    <footer>
       <div class="footer-content">
         <div class="footer-brand">
           <h3>Sun Hour</h3>
@@ -518,34 +521,32 @@
         </div>
 
         <div class="footer-links">
-          <h4>Quick Links</h4>
+          <h4>Links</h4>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://t.me/yourusername" target="_blank">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-social">
           <h4>Follow Me</h4>
           <div class="social-icons">
-            <a href="https://www.facebook.com/share/18EjMT5eED/?mibextid=wwXIfr" title="Facebook" target="_blank">
+            <a href="https://www.facebook.com/share/1EJFYxbd7h/?mibextid=wwFdlR" target="_blank" title="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/benzersam?igsh=MXFqYW1rejgxZ3Nicg%3D%3D&utm_source=qr" title="Instagram" target="_blank">
+            <a href="https://www.instagram.com/senzoram/" target="_blank" title="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@benzerhour?_r=1&_t=ZS-9AK6h1jACFZ" title="TikTok" target="_blank">
+            <a href="https://www.tiktok.com/@senzoram?_t=ZS-8MXOh1JZCIY&_r=1" target="_blank" title="TikTok">
               <i class="fab fa-tiktok"></i>
             </a>
           </div>
         </div>
       </div>
     </footer>
-
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
